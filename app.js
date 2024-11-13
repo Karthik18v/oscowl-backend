@@ -69,6 +69,10 @@ app.put("/update-profile", authenticateJWT, async (request, response) => {
   }
 });
 
+app.get("/",async(request,response)=>{
+  response.send('Hello');
+})
+
 app.put("/change-password", authenticateJWT, async (request, response) => {
   const { currentPassword, newPassword } = request.body;
   const { userId } = request;
